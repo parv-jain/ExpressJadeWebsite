@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title #{title}: Express Website
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='#') Express Website
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li(class=(title == 'Home' ? 'nav-item active' : 'nav-item'))
+            a.nav-link(href='/')
+              | Home 
+              span.sr-only (current)
+          li(class=(title == 'About' ? 'nav-item active' : 'nav-item'))
+            a.nav-link(href='/about') About
+          li(class=(title == 'Contact' ? 'nav-item active' : 'nav-item'))
+            a.nav-link(href='/contact') Contact
+          
+    block content
+    footer
+      p &copy; 2017, All Rights Reserved
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='javascripts/bootstrap.js')
